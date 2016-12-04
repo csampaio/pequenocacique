@@ -2,5 +2,144 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MainEvent</name>
-    <events />
+    <events>
+        <event-group description="" sid="522142733406309" title="Player">
+            <sub-events>
+                <event-block sid="272734051490558">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="988749759991834" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="496985965165011">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="787410204846047" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="113401683214651" type="Player">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="455539760126337">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="890794352687750" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="179906526943755" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="869943548222009">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="857380266406409" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="668103780042503" type="Player">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="163327270860257">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="484170070771419" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="647626988516630" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="989314088492810">
+                    <conditions>
+                        <condition behavior="Platform" id="6" name="On fall" sid="180851597339555" type="Player" />
+                        <condition id="9" inverted="1" name="Is overlapping at offset" sid="351111395486891" type="Player">
+                            <param id="0" name="Object">Tilemap</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">80</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="946932609488663" type="Player">
+                            <param id="0" name="Animation">&quot;Fall&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="700749384849542">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="269402950582329" type="Player" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="380576384677577" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="792253792972511" type="Player">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="229589234070660">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="114281621142949" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="910811699221270" type="Bow">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Bow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="666008684700670" title="Bow">
+            <sub-events>
+                <event-block sid="125191122741154">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="371099244493699" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="328060813126865" type="Bow">
+                            <param id="0" name="Object">Arrow</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="240257971891222" title="Arrow">
+            <sub-events>
+                <event-block sid="818945366154917">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="439704755991932" type="Arrow">
+                            <param id="0" name="Object">Tilemap</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="905543266433894" type="Arrow">
+                            <param id="0" name="Setting">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
 </c2eventsheet>
