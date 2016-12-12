@@ -15,6 +15,9 @@
                         <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
                             <param id="0" name="State">1</param>
                         </action>
+                        <action id="7" name="Set mirrored" sid="279047516426364" type="Bow">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="496985965165011">
@@ -38,6 +41,9 @@
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="179906526943755" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="970518000270269" type="Bow">
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
@@ -134,10 +140,29 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Physics" id="21" name="Set immovable" sid="905543266433894" type="Arrow">
-                            <param id="0" name="Setting">1</param>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="373175835140548" type="Arrow">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="704706020747040">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="770454642418734" type="Arrow" />
+                        <condition id="7" name="Is mirrored" sid="257833501153565" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="573392704998464" type="Arrow">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="716098481891752" title="Rock">
+            <sub-events>
+                <event-block sid="702616079663478">
+                    <conditions />
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
