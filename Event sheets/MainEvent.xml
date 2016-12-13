@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MainEvent</name>
     <events>
+        <variable constant="0" name="NunArrow" sid="462636213646898" static="0" type="number">3</variable>
         <event-group description="" sid="522142733406309" title="Player">
             <sub-events>
                 <event-block sid="272734051490558">
@@ -171,12 +172,29 @@
                         <condition id="0" name="On key pressed" sid="371099244493699" type="Keyboard">
                             <param id="0" name="Key">32 (Space)</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="578206363626176" type="System">
+                            <param id="0" name="Variable">NunArrow</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="648219109254547" type="System">
+                            <param id="0" name="Variable">NunArrow</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="328060813126865" type="Bow">
                             <param id="0" name="Object">Arrow</param>
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="172484395418623" type="System">
+                            <param id="0" name="Variable">NunArrow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="283342185064155" type="ArrawCount">
+                            <param id="0" name="Width">64*NunArrow</param>
                         </action>
                     </actions>
                 </event-block>
@@ -207,15 +225,31 @@
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="716098481891752" title="Rock">
-            <sub-events>
-                <event-block sid="702616079663478">
-                    <conditions />
-                    <actions />
+                <event-block sid="644629372247295">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="685227414250063" type="Player">
+                            <param id="0" name="Object">Arrow</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="169791776550839" type="Arrow">
+                            <param id="0" name="Object">Tilemap</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="522374194256286" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="421993661165684" type="Arrow" />
+                        <action id="-10" name="Add to" sid="674057206847224" type="System">
+                            <param id="0" name="Variable">NunArrow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="651897208082563" type="ArrawCount">
+                            <param id="0" name="Width">64*NunArrow</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="739996653311370" title="Hud" />
     </events>
 </c2eventsheet>
