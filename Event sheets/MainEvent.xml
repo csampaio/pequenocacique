@@ -113,6 +113,53 @@
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y + 5</param>
                         </action>
+                        <action id="-3" name="Set position" sid="788342472984822" type="RockBase">
+                            <param id="0" name="X">Rock.X</param>
+                            <param id="1" name="Y">Rock.Y-10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="208108311113014">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="131052316673973" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="636836758101157">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" sid="109338897553600" type="Player">
+                                    <param id="0" name="Object">Rock</param>
+                                    <param id="1" name="Offset X">5</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                                <condition id="9" name="Is overlapping at offset" sid="926352780753405" type="Player">
+                                    <param id="0" name="Object">Rock</param>
+                                    <param id="1" name="Offset X">-5</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="932677718797873" type="Player">
+                                    <param id="0" name="Animation">&quot;Pushing&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="194327779496227">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="958959403138451" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="806042051081124" type="Rock">
+                            <param id="0" name="Setting">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
