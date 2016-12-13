@@ -16,6 +16,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -266,6 +267,9 @@
                 <behavior-type name="Solid" sid="924547101983787">
                     <behavior id="solid" />
                 </behavior-type>
+                <behavior-type name="Physics" sid="486080341885893">
+                    <behavior id="Physics" />
+                </behavior-type>
             </behaviors>
             <texture original-source="E:\projetos\PosUEA\TutorialPlatform\tileset-platformer.png" />
             <tiles />
@@ -316,11 +320,8 @@
         <object-type name="Rock" sid="215340460363478">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Solid" sid="250604591336552">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="627484687572689">
-                    <behavior id="Bullet" />
+                <behavior-type name="Physics" sid="163931048171402">
+                    <behavior id="Physics" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -336,6 +337,19 @@
                             <point x="0" y="0" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerPhysics" sid="199126220991020">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="286004950844028">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="553333884294242" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
