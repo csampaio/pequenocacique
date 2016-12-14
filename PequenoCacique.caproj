@@ -283,8 +283,25 @@
                     <behavior id="Physics" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="E:\projetos\PosUEA\TutorialPlatform\tileset-platformer.png" />
-            <tiles />
+            <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset.png" />
+            <tiles>
+                <tile id="32">
+                    <collision-poly>
+                        <point x="1" y="1" />
+                        <point x="1" y="1" />
+                        <point x="1" y="1" />
+                        <point x="1" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="50">
+                    <collision-poly>
+                        <point x="0" y="0.601563" />
+                        <point x="1" y="0.601563" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
         </object-type>
         <object-type name="Keyboard" sid="247068363383298">
             <plugin id="Keyboard" />
