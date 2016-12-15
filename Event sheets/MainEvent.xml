@@ -118,48 +118,12 @@
                             <param id="0" name="X">Rock.X</param>
                             <param id="1" name="Y">Rock.Y-10</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="208108311113014">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="131052316673973" type="Keyboard">
-                            <param id="0" name="Key">88 (X)</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block any="1" sid="636836758101157">
-                            <conditions>
-                                <condition id="9" name="Is overlapping at offset" sid="109338897553600" type="Player">
-                                    <param id="0" name="Object">Rock</param>
-                                    <param id="1" name="Offset X">5</param>
-                                    <param id="2" name="Offset Y">0</param>
-                                </condition>
-                                <condition id="9" name="Is overlapping at offset" sid="926352780753405" type="Player">
-                                    <param id="0" name="Object">Rock</param>
-                                    <param id="1" name="Offset X">-5</param>
-                                    <param id="2" name="Offset Y">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="932677718797873" type="Player">
-                                    <param id="0" name="Animation">&quot;Pushing&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
-                                    <param id="0" name="Setting">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="194327779496227">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="958959403138451" type="System" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Physics" id="21" name="Set immovable" sid="806042051081124" type="Rock">
-                            <param id="0" name="Setting">1</param>
+                        <action id="-3" name="Set position" sid="233160580322278" type="BoardBase">
+                            <param id="0" name="X">Board.X</param>
+                            <param id="1" name="Y">Board.Y-5</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="792847415821259" type="BoardBase">
+                            <param id="0" name="Angle">Board.Angle</param>
                         </action>
                     </actions>
                 </event-block>
@@ -250,6 +214,71 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="739996653311370" title="Hud" />
+        <event-group description="" sid="739996653311370" title="Rock">
+            <sub-events>
+                <event-block sid="208108311113014">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="131052316673973" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="636836758101157">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" sid="109338897553600" type="Player">
+                                    <param id="0" name="Object">Rock</param>
+                                    <param id="1" name="Offset X">10</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                                <condition id="9" name="Is overlapping at offset" sid="926352780753405" type="Player">
+                                    <param id="0" name="Object">Rock</param>
+                                    <param id="1" name="Offset X">-10</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="932677718797873" type="Player">
+                                    <param id="0" name="Animation">&quot;Pushing&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="442848421430101">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="388980023776045" type="System" />
+                        <condition id="9" name="Is overlapping at offset" sid="440025089600294" type="Rock">
+                            <param id="0" name="Object">Tilemap</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="260561751721402" type="Rock">
+                            <param id="0" name="Setting">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="385140815103661">
+                    <conditions>
+                        <condition id="9" inverted="1" name="Is overlapping at offset" sid="165606375682679" type="Rock">
+                            <param id="0" name="Object">Tilemap</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="914838148550739" type="Rock">
+                            <param id="0" name="Setting">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

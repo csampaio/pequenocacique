@@ -285,6 +285,60 @@
             </behaviors>
             <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset.png" />
             <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0" y="0.3125" />
+                        <point x="0.359375" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="2">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.65625" y="0" />
+                        <point x="1" y="0.359375" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="3">
+                    <collision-poly>
+                        <point x="0" y="0.3125" />
+                        <point x="0.34375" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="5">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.65625" y="0" />
+                        <point x="1" y="0.34375" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="12">
+                    <collision-poly>
+                        <point x="0" y="0.3125" />
+                        <point x="0.34375" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="14">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.65625" y="0" />
+                        <point x="1" y="0.34375" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
                 <tile id="32">
                     <collision-poly>
                         <point x="1" y="1" />
@@ -406,6 +460,40 @@
         <object-type name="ArrawCount" sid="112070483386333">
             <plugin id="TiledBg" />
             <texture />
+        </object-type>
+        <object-type name="Board" sid="248777174591514">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="706948466576020">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>Board</type>
+                <type>BoardBase</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="818791444178089" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BoardBase" sid="711040424359547">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="408713476281533">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>Board</type>
+                <type>BoardBase</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="896748995933130" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
