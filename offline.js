@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1481738125,
+	"version": 1481823666,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -12,6 +12,7 @@
 		"images/playerphysics-sheet0.png",
 		"images/rockbase-sheet0.png",
 		"images/arrawcount.png",
+		"images/board-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
