@@ -11,6 +11,9 @@
                         <condition id="2" name="Key is down" sid="988749759991834" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
                         </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="716754882659743" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
@@ -38,6 +41,9 @@
                     <conditions>
                         <condition id="2" name="Key is down" sid="890794352687750" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="860403318307091" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -238,12 +244,15 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="932677718797873" type="Player">
                                     <param id="0" name="Animation">&quot;Pushing&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
-                                    <param id="0" name="Setting">0</param>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="933173110466437" type="RockBase">
+                                    <param id="0" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -262,6 +271,9 @@
                         <action behavior="Physics" id="21" name="Set immovable" sid="260561751721402" type="Rock">
                             <param id="0" name="Setting">1</param>
                         </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="438462315563647" type="RockBase">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="385140815103661">
@@ -276,9 +288,32 @@
                         <action behavior="Physics" id="21" name="Set immovable" sid="914838148550739" type="Rock">
                             <param id="0" name="Setting">0</param>
                         </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="590937456855545" type="RockBase">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="517674319698209">
+            <conditions>
+                <condition id="9" name="Is overlapping at offset" sid="658167911127125" type="Rock">
+                    <param id="0" name="Object">BoardBase</param>
+                    <param id="1" name="Offset X">0</param>
+                    <param id="2" name="Offset Y">0</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="792474717702140" type="Keyboard">
+                    <param id="0" name="Key">88 (X)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="21" name="Set immovable" sid="987800129519975" type="Rock">
+                    <param id="0" name="Setting">1</param>
+                </action>
+                <action behavior="Solid" id="0" name="Set enabled" sid="617109647764676" type="RockBase">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
