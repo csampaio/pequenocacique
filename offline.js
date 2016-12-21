@@ -1,12 +1,11 @@
 ﻿{
-	"version": 1482255336,
+	"version": 1482293609,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
 		"jquery-2.1.1.min.js",
 		"images/player-sheet0.png",
 		"images/tilemap.png",
-		"images/bow-sheet0.png",
 		"images/arrow-sheet0.png",
 		"images/rock-sheet0.png",
 		"images/playerphysics-sheet0.png",
