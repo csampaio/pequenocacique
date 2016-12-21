@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MainEvent</name>
     <events>
+        <variable constant="1" name="ROCKMAXDENSITY" sid="451495719173841" static="0" type="number">6000</variable>
+        <variable constant="1" name="PlayerMaxSpeed" sid="885945498272089" static="0" type="number">330</variable>
         <variable constant="0" name="NunArrow" sid="462636213646898" static="0" type="number">3</variable>
         <event-group description="" sid="522142733406309" title="Player">
             <sub-events>
@@ -17,9 +19,6 @@
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="7" name="Set mirrored" sid="279047516426364" type="Bow">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
@@ -48,9 +47,6 @@
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="179906526943755" type="Player">
-                            <param id="0" name="State">0</param>
-                        </action>
-                        <action id="7" name="Set mirrored" sid="970518000270269" type="Bow">
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
@@ -112,10 +108,6 @@
                         <condition id="-1" name="Every tick" sid="114281621142949" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set position to another object" sid="910811699221270" type="Bow">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Image point (optional)">&quot;Bow&quot;</param>
-                        </action>
                         <action id="-3" name="Set position" sid="398709335999810" type="PlayerPhysics">
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y + 5</param>
@@ -154,10 +146,10 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="328060813126865" type="Bow">
+                        <action id="0" name="Spawn another object" sid="328060813126865" type="Player">
                             <param id="0" name="Object">Arrow</param>
                             <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
+                            <param id="2" name="Image point">&quot;Bow&quot;</param>
                         </action>
                         <action id="-11" name="Subtract from" sid="172484395418623" type="System">
                             <param id="0" name="Variable">NunArrow</param>
@@ -197,7 +189,7 @@
                 </event-block>
                 <event-block sid="644629372247295">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="685227414250063" type="Player">
+                        <condition id="1" name="Is overlapping another object" sid="685227414250063" type="PlayerPhysics">
                             <param id="0" name="Object">Arrow</param>
                         </condition>
                         <condition id="1" name="Is overlapping another object" sid="169791776550839" type="Arrow">
@@ -244,15 +236,18 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Physics" id="21" name="Set immovable" sid="515618858592393" type="Rock">
-                                    <param id="0" name="Setting">0</param>
-                                </action>
                                 <action id="4" name="Set animation" sid="932677718797873" type="Player">
                                     <param id="0" name="Animation">&quot;Pushing&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action behavior="Solid" id="0" name="Set enabled" sid="933173110466437" type="RockBase">
                                     <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Physics" id="16" name="Set density" sid="133283381599990" type="Rock">
+                                    <param id="0" name="Density">40</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="551738181467915" type="Player">
+                                    <param id="0" name="Max Speed">100</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -268,11 +263,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Physics" id="21" name="Set immovable" sid="260561751721402" type="Rock">
-                            <param id="0" name="Setting">1</param>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="998883966364752" type="Player">
+                            <param id="0" name="Max Speed">PLAYERMAXSPEED</param>
                         </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="438462315563647" type="RockBase">
                             <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Physics" id="16" name="Set density" sid="487583385591536" type="Rock">
+                            <param id="0" name="Density">ROCKMAXDENSITY</param>
                         </action>
                     </actions>
                 </event-block>
@@ -285,33 +283,43 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Physics" id="21" name="Set immovable" sid="914838148550739" type="Rock">
-                            <param id="0" name="Setting">0</param>
-                        </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="590937456855545" type="RockBase">
                             <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Physics" id="16" name="Set density" sid="334766538017810" type="Rock">
+                            <param id="0" name="Density">ROCKMAXDENSITY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="517674319698209">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="658167911127125" type="Rock">
+                            <param id="0" name="Object">BoardBase</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="792474717702140" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="617109647764676" type="RockBase">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Physics" id="16" name="Set density" sid="457620793139443" type="Rock">
+                            <param id="0" name="Density">ROCKMAXDENSITY</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="517674319698209">
+        <event-block sid="770320581128890">
             <conditions>
-                <condition id="9" name="Is overlapping at offset" sid="658167911127125" type="Rock">
-                    <param id="0" name="Object">BoardBase</param>
-                    <param id="1" name="Offset X">0</param>
-                    <param id="2" name="Offset Y">0</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="792474717702140" type="Keyboard">
-                    <param id="0" name="Key">88 (X)</param>
-                </condition>
+                <condition id="-2" name="On start of layout" sid="901208099130377" type="System" />
             </conditions>
             <actions>
-                <action behavior="Physics" id="21" name="Set immovable" sid="987800129519975" type="Rock">
-                    <param id="0" name="Setting">1</param>
-                </action>
-                <action behavior="Solid" id="0" name="Set enabled" sid="617109647764676" type="RockBase">
-                    <param id="0" name="State">1</param>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="428952692973463" type="Rock">
+                    <param id="0" name="Gravity">20</param>
                 </action>
             </actions>
         </event-block>
