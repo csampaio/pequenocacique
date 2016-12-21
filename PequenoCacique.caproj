@@ -80,7 +80,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -91,7 +91,7 @@
                 </animation>
                 <animation framecount="3" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="192470838523527" speed="13">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -100,7 +100,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -109,7 +109,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -120,7 +120,7 @@
                 </animation>
                 <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="937325218936874" speed="12">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -131,7 +131,7 @@
                 </animation>
                 <animation framecount="1" loop="0" name="Fall" pingpong="0" repeatcount="1" repeatto="0" sid="555228795074408" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\projetos\PosUEA\pequenocacique\Assets\player_frame_2_level1.png">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -142,7 +142,7 @@
                 </animation>
                 <animation framecount="3" loop="1" name="Pushing" pingpong="0" repeatcount="1" repeatto="0" sid="937249895890751" speed="13">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -151,7 +151,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
@@ -160,12 +160,50 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Bow" x="0.96875" y="0.25" />
+                        <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
                             <point x="0" y="0.109375" />
                             <point x="1" y="0.109375" />
                             <point x="1" y="0.980469" />
                             <point x="0" y="0.980469" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="Fire" pingpong="0" repeatcount="1" repeatto="0" sid="675897027311097" speed="5">
+                    <frame duration="1" hotspotX="0.363636" hotspotY="0.5" original-source="E:\projetos\PosUEA\pequenocacique\Assets\player.png">
+                        <image-point name="Bow" x="1.34091" y="0.25" />
+                        <collision-poly>
+                            <point x="0.272727" y="0.015625" />
+                            <point x="1" y="0.25" />
+                            <point x="1" y="0.015625" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.363636" hotspotY="0.5">
+                        <image-point name="Bow" x="0.977273" y="0.25" />
+                        <collision-poly>
+                            <point x="0" y="0.015625" />
+                            <point x="1" y="0.25" />
+                            <point x="1" y="0.015625" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.363636" hotspotY="0.5">
+                        <image-point name="Bow" x="0.977273" y="0.25" />
+                        <collision-poly>
+                            <point x="0.0227273" y="0.015625" />
+                            <point x="0.113636" y="0.25" />
+                            <point x="0.977273" y="0.015625" />
+                            <point x="0.931818" y="0.5" />
+                            <point x="0.977273" y="1" />
+                            <point x="0.113636" y="1" />
+                            <point x="0.0227273" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>

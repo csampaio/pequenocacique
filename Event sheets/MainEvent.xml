@@ -13,8 +13,8 @@
                         <condition id="2" name="Key is down" sid="988749759991834" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
                         </condition>
-                        <condition id="2" inverted="1" name="Key is down" sid="716754882659743" type="Keyboard">
-                            <param id="0" name="Key">88 (X)</param>
+                        <condition id="2" inverted="1" name="Key is down" sid="885458616126677" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -41,8 +41,8 @@
                         <condition id="2" name="Key is down" sid="890794352687750" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
                         </condition>
-                        <condition id="2" inverted="1" name="Key is down" sid="860403318307091" type="Keyboard">
-                            <param id="0" name="Key">88 (X)</param>
+                        <condition id="2" inverted="1" name="Key is down" sid="164707445603529" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -95,6 +95,9 @@
                     <conditions>
                         <condition behavior="Platform" id="2" name="Is on floor" sid="269402950582329" type="Player" />
                         <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="380576384677577" type="Player" />
+                        <condition id="2" inverted="1" name="Key is down" sid="911944491420793" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="792253792972511" type="Player">
@@ -146,10 +149,17 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="4" name="Set animation" sid="625399020166318" type="Player">
+                            <param id="0" name="Animation">&quot;Fire&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                         <action id="0" name="Spawn another object" sid="328060813126865" type="Player">
                             <param id="0" name="Object">Arrow</param>
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">&quot;Bow&quot;</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="333381901762973" type="Arrow">
+                            <param id="0" name="State">1</param>
                         </action>
                         <action id="-11" name="Subtract from" sid="172484395418623" type="System">
                             <param id="0" name="Variable">NunArrow</param>
@@ -186,6 +196,12 @@
                             <param id="0" name="Angle">180</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="947779131720641">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="644629372247295">
                     <conditions>
@@ -201,6 +217,13 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="421993661165684" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block sid="280600367171715">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="804617707337514" type="Arrow" />
+                    </conditions>
+                    <actions>
                         <action id="-10" name="Add to" sid="674057206847224" type="System">
                             <param id="0" name="Variable">NunArrow</param>
                             <param id="1" name="Value">1</param>

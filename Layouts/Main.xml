@@ -287,8 +287,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>337</x>
-                        <y>494</y>
+                        <x>402</x>
+                        <y>1950</y>
                         <z>0</z>
                         <width>32</width>
                         <height>8</height>
@@ -319,7 +319,7 @@
                                 <gravity>50</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
                                 <set-angle>Yes</set-angle>
-                                <initial-state>Enabled</initial-state>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="DestroyOutsideLayout" />
@@ -327,8 +327,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>322</x>
-                        <y>-32</y>
+                        <x>72</x>
+                        <y>588</y>
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
