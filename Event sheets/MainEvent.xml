@@ -13,9 +13,6 @@
                         <condition id="2" name="Key is down" sid="988749759991834" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
                         </condition>
-                        <condition id="2" inverted="1" name="Key is down" sid="885458616126677" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
-                        </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
@@ -26,6 +23,12 @@
                         <event-block sid="496985965165011">
                             <conditions>
                                 <condition behavior="Platform" id="2" name="Is on floor" sid="787410204846047" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="885458616126677" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="615076202427622" type="Keyboard">
+                                    <param id="0" name="Key">88 (X)</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="113401683214651" type="Player">
@@ -41,9 +44,6 @@
                         <condition id="2" name="Key is down" sid="890794352687750" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
                         </condition>
-                        <condition id="2" inverted="1" name="Key is down" sid="164707445603529" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
-                        </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="179906526943755" type="Player">
@@ -54,6 +54,12 @@
                         <event-block sid="869943548222009">
                             <conditions>
                                 <condition behavior="Platform" id="2" name="Is on floor" sid="857380266406409" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="164707445603529" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="174512920943733" type="Keyboard">
+                                    <param id="0" name="Key">88 (X)</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="668103780042503" type="Player">
@@ -249,25 +255,25 @@
                             <conditions>
                                 <condition id="9" name="Is overlapping at offset" sid="109338897553600" type="Player">
                                     <param id="0" name="Object">Rock</param>
-                                    <param id="1" name="Offset X">10</param>
+                                    <param id="1" name="Offset X">5</param>
                                     <param id="2" name="Offset Y">0</param>
                                 </condition>
                                 <condition id="9" name="Is overlapping at offset" sid="926352780753405" type="Player">
                                     <param id="0" name="Object">Rock</param>
-                                    <param id="1" name="Offset X">-10</param>
+                                    <param id="1" name="Offset X">-5</param>
                                     <param id="2" name="Offset Y">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="932677718797873" type="Player">
-                                    <param id="0" name="Animation">&quot;Pushing&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                                 <action behavior="Solid" id="0" name="Set enabled" sid="933173110466437" type="RockBase">
                                     <param id="0" name="State">0</param>
                                 </action>
                                 <action behavior="Physics" id="16" name="Set density" sid="133283381599990" type="Rock">
                                     <param id="0" name="Density">40</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="932677718797873" type="Player">
+                                    <param id="0" name="Animation">&quot;Pushing&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                                 <action behavior="Platform" id="1" name="Set max speed" sid="551738181467915" type="Player">
                                     <param id="0" name="Max Speed">100</param>
@@ -279,40 +285,30 @@
                 <event-block sid="442848421430101">
                     <conditions>
                         <condition id="-22" name="Else" sid="388980023776045" type="System" />
-                        <condition id="9" name="Is overlapping at offset" sid="440025089600294" type="Rock">
-                            <param id="0" name="Object">Tilemap</param>
-                            <param id="1" name="Offset X">0</param>
-                            <param id="2" name="Offset Y">5</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="1" name="Set max speed" sid="998883966364752" type="Player">
-                            <param id="0" name="Max Speed">PLAYERMAXSPEED</param>
-                        </action>
-                        <action behavior="Solid" id="0" name="Set enabled" sid="438462315563647" type="RockBase">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Physics" id="16" name="Set density" sid="487583385591536" type="Rock">
-                            <param id="0" name="Density">ROCKMAXDENSITY</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="385140815103661">
-                    <conditions>
-                        <condition id="9" inverted="1" name="Is overlapping at offset" sid="165606375682679" type="Rock">
-                            <param id="0" name="Object">Tilemap</param>
-                            <param id="1" name="Offset X">0</param>
-                            <param id="2" name="Offset Y">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Solid" id="0" name="Set enabled" sid="590937456855545" type="RockBase">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Physics" id="16" name="Set density" sid="334766538017810" type="Rock">
-                            <param id="0" name="Density">ROCKMAXDENSITY</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="854795984077760">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" sid="440025089600294" type="Rock">
+                                    <param id="0" name="Object">Tilemap</param>
+                                    <param id="1" name="Offset X">0</param>
+                                    <param id="2" name="Offset Y">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="998883966364752" type="Player">
+                                    <param id="0" name="Max Speed">PLAYERMAXSPEED</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="438462315563647" type="RockBase">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Physics" id="16" name="Set density" sid="487583385591536" type="Rock">
+                                    <param id="0" name="Density">ROCKMAXDENSITY</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="517674319698209">
                     <conditions>
