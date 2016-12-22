@@ -280,6 +280,17 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="666676329835090">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="347523213194284" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="456363593161383" type="Player">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="442848421430101">
