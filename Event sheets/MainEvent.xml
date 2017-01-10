@@ -353,27 +353,47 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="810168076994102">
-            <conditions>
-                <condition id="0" name="Compare tile at" sid="899216248865554" type="Tilemap">
-                    <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
-                    <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
-                    <param id="2" name="Comparison">5</param>
-                    <param id="3" name="Tile">15</param>
-                </condition>
-                <condition id="0" name="Compare tile at" sid="248454946301217" type="Tilemap">
-                    <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
-                    <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
-                    <param id="2" name="Comparison">3</param>
-                    <param id="3" name="Tile">17</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="602163936840330" type="Player">
-                    <param id="0" name="Animation">&quot;Death&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="876083374369280" title="Death Areas">
+            <sub-events>
+                <event-block sid="810168076994102">
+                    <conditions>
+                        <condition id="0" name="Compare tile at" sid="899216248865554" type="Tilemap">
+                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
+                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
+                            <param id="2" name="Comparison">5</param>
+                            <param id="3" name="Tile">15</param>
+                        </condition>
+                        <condition id="0" name="Compare tile at" sid="248454946301217" type="Tilemap">
+                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
+                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
+                            <param id="2" name="Comparison">3</param>
+                            <param id="3" name="Tile">17</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="602163936840330" type="Player">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="676304646589646">
+                    <conditions>
+                        <condition id="0" name="Compare tile at" sid="325270273972366" type="Tilemap">
+                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
+                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Tile">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="518488419595834" type="Player">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
