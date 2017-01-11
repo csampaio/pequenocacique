@@ -6,6 +6,49 @@
         <variable constant="1" name="ROCKMAXDENSITY" sid="451495719173841" static="0" type="number">6000</variable>
         <variable constant="1" name="PlayerMaxSpeed" sid="885945498272089" static="0" type="number">330</variable>
         <variable constant="0" name="NunArrow" sid="462636213646898" static="0" type="number">3</variable>
+        <event-block sid="770320581128890">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="901208099130377" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="428952692973463" type="Rock">
+                    <param id="0" name="Gravity">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="229589234070660">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="114281621142949" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="398709335999810" type="PlayerPhysics">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y + 5</param>
+                </action>
+                <action id="-3" name="Set position" sid="788342472984822" type="RockBase">
+                    <param id="0" name="X">Rock.X</param>
+                    <param id="1" name="Y">Rock.Y-10</param>
+                </action>
+                <action id="-3" name="Set position" sid="233160580322278" type="BoardBase">
+                    <param id="0" name="X">Board.X</param>
+                    <param id="1" name="Y">Board.Y-5</param>
+                </action>
+                <action id="-8" name="Set angle" sid="792847415821259" type="BoardBase">
+                    <param id="0" name="Angle">Board.Angle</param>
+                </action>
+                <action id="-3" name="Set position" sid="804382836953594" type="EnemyPhysics">
+                    <param id="0" name="X">Centopeia.X</param>
+                    <param id="1" name="Y">Centopeia.Y +5</param>
+                </action>
+                <action id="0" name="Set text" sid="735432314506441" type="Text">
+                    <param id="0" name="Text">Centopeia.Bullet.AngleOfMotion</param>
+                </action>
+                <action id="-3" name="Set position" sid="503534061205028" type="EnemyPhysics2">
+                    <param id="0" name="X">Tucandeira.X</param>
+                    <param id="1" name="Y">Tucandeira.Y +5</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="522142733406309" title="Player">
             <sub-events>
                 <event-block sid="272734051490558">
@@ -109,28 +152,6 @@
                         <action id="4" name="Set animation" sid="792253792972511" type="Player">
                             <param id="0" name="Animation">&quot;Idle&quot;</param>
                             <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="229589234070660">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="114281621142949" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="398709335999810" type="PlayerPhysics">
-                            <param id="0" name="X">Player.X</param>
-                            <param id="1" name="Y">Player.Y + 5</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="788342472984822" type="RockBase">
-                            <param id="0" name="X">Rock.X</param>
-                            <param id="1" name="Y">Rock.Y-10</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="233160580322278" type="BoardBase">
-                            <param id="0" name="X">Board.X</param>
-                            <param id="1" name="Y">Board.Y-5</param>
-                        </action>
-                        <action id="-8" name="Set angle" sid="792847415821259" type="BoardBase">
-                            <param id="0" name="Angle">Board.Angle</param>
                         </action>
                     </actions>
                 </event-block>
@@ -343,16 +364,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="770320581128890">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="901208099130377" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="Physics" id="12" name="Set world gravity" sid="428952692973463" type="Rock">
-                    <param id="0" name="Gravity">20</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="876083374369280" title="Death Areas">
             <sub-events>
                 <event-block sid="810168076994102">
@@ -392,6 +403,48 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="937697164373026" title="Centopeia">
+            <sub-events>
+                <event-block sid="276944249707602">
+                    <conditions>
+                        <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="623752040655598" type="Centopeia">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Distance">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="293711688792169" type="Centopeia">
+                            <param id="0" name="Speed">-Self.Bullet.Speed</param>
+                        </action>
+                        <action behavior="Bullet" id="6" name="Set distance travelled" sid="526770337810341" type="Centopeia">
+                            <param id="0" name="Distance">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="896190483564654">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="408291576902305" type="Centopeia" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="444458315240516" type="Centopeia">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="954759013998600">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="203133226648324" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="797926773176410" type="Centopeia">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
