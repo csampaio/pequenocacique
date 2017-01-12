@@ -561,6 +561,7 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="PlayerOnSight" sid="605233568655369" type="boolean" />
+                <instance-variable name="Atacking" sid="690655030139572" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="237169502527585">
@@ -568,6 +569,9 @@
                 </behavior-type>
                 <behavior-type name="LineOfSight" sid="578259810087040">
                     <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="308413931984608">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <container>

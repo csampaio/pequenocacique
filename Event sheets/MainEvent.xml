@@ -264,6 +264,41 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="103014197380016">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="877076781441065" type="Arrow">
+                            <param id="0" name="Object">Tucandeira</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="565877640196166" type="Arrow">
+                            <param id="0" name="Object">Level</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="242125183900903" type="Arrow">
+                            <param id="0" name="Object">Tucandeira</param>
+                        </action>
+                        <action behavior="Bullet" id="2" name="Set gravity" sid="247416860049103" type="Arrow">
+                            <param id="0" name="Gravity">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="525359713318104">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="478715687667090" type="Arrow">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="319939809083597" type="Arrow">
+                            <param id="0" name="Object">Level</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="711883970059918" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="739996653311370" title="Rock">
@@ -437,27 +472,87 @@
                         <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="184240217956618" type="Tucandeira">
                             <param id="0" name="Object">Player</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="509897560944956" type="Tucandeira">
+                            <param id="0" name="Instance variable">Atacking</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="882872259565867" type="Tucandeira">
-                            <param id="0" name="Control">1</param>
-                        </action>
                         <action id="-13" name="Set boolean" sid="107033684889767" type="Tucandeira">
                             <param id="0" name="Instance variable">PlayerOnSight</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="488880750494690">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="818258308384837" type="Player">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">Tucandeira.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="882872259565867" type="Tucandeira">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="123000487716694" type="Tucandeira">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="440483738678796" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="208158781491801">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="366957532495137" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="654681109858291" type="Tucandeira">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="160473771896155" type="Tucandeira">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="916736065307124" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="696800635556555">
                             <conditions>
                                 <condition id="2" inverted="1" name="Is playing" sid="196749535149148" type="Tucandeira">
                                     <param id="0" name="Animation">&quot;StandUp&quot;</param>
                                 </condition>
+                                <condition id="-8" name="Compare two values" sid="495719313434490" type="System">
+                                    <param id="0" name="First value">distance(Player.X,Player.Y,Tucandeira.X, Tucandeira.Y)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">150</param>
+                                </condition>
                             </conditions>
                             <actions>
+                                <action id="-13" name="Set boolean" sid="251991813635331" type="Tucandeira">
+                                    <param id="0" name="Instance variable">Atacking</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="198856218607803" type="Tucandeira">
                                     <param id="0" name="Animation">&quot;StandUp&quot;</param>
                                     <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="870648146645992" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="701985726818625" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;Atack&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="983896306685340" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="592903923807581" type="Tucandeira">
+                                    <param id="0" name="Instance variable">Atacking</param>
+                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -474,6 +569,9 @@
                                 <condition id="-8" name="Is boolean instance variable set" sid="609899072801923" type="Tucandeira">
                                     <param id="0" name="Instance variable">PlayerOnSight</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="325467005300795" type="Tucandeira">
+                                    <param id="0" name="Instance variable">Atacking</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="217949318091807" type="Tucandeira">
@@ -487,6 +585,20 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="498540966046885">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="547320145757944" type="Tucandeira">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="147785391073243" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

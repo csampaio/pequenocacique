@@ -592,6 +592,7 @@
                     </properties>
                     <instance-variables>
                         <PlayerOnSight>false</PlayerOnSight>
+                        <Atacking>false</Atacking>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -614,6 +615,11 @@
                                 <range>10000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>

@@ -285,12 +285,13 @@
                     </properties>
                     <instance-variables>
                         <PlayerOnSight>false</PlayerOnSight>
+                        <Atacking>false</Atacking>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>400</max-speed>
-                                <acceleration>600</acceleration>
+                                <acceleration>300</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
                                 <gravity>1500</gravity>
@@ -304,9 +305,14 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Custom</obstacles>
-                                <range>500</range>
+                                <range>600</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
