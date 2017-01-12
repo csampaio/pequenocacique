@@ -87,19 +87,19 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.132813" y="0.105469" />
+                            <point x="0.914063" y="0.105469" />
+                            <point x="0.914063" y="0.980469" />
+                            <point x="0.132813" y="0.980469" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.132813" y="0.105469" />
+                            <point x="0.914063" y="0.105469" />
+                            <point x="0.914063" y="0.980469" />
+                            <point x="0.132813" y="0.980469" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -107,28 +107,28 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.0273438" y="0.109375" />
+                            <point x="0.914063" y="0.111328" />
+                            <point x="0.914063" y="0.978516" />
+                            <point x="0.0273438" y="0.978516" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.0273438" y="0.109375" />
+                            <point x="0.914063" y="0.111328" />
+                            <point x="0.914063" y="0.978516" />
+                            <point x="0.0273438" y="0.978516" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.0273438" y="0.109375" />
+                            <point x="0.914063" y="0.111328" />
+                            <point x="0.914063" y="0.978516" />
+                            <point x="0.0273438" y="0.978516" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -136,19 +136,19 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\projetos\PosUEA\pequenocacique\Assets\player (1).png">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.03125" y="0.109375" />
+                            <point x="0.957031" y="0.107422" />
+                            <point x="0.957031" y="0.980469" />
+                            <point x="0.03125" y="0.980469" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Bow" x="1.34375" y="0.25" />
                         <collision-poly>
-                            <point x="0" y="0.109375" />
-                            <point x="1" y="0.109375" />
-                            <point x="1" y="0.980469" />
-                            <point x="0" y="0.980469" />
+                            <point x="0.03125" y="0.109375" />
+                            <point x="0.957031" y="0.107422" />
+                            <point x="0.957031" y="0.980469" />
+                            <point x="0.03125" y="0.980469" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -1200,6 +1200,71 @@
         </object-type>
         <object-type name="Boss" sid="205489725735355">
             <plugin id="Button" />
+        </object-type>
+        <object-type name="Sprite" sid="668584921230653">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="237075899659406" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="737113383185503">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="597106258965345" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Feather" sid="585302687345208">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="130233962705267">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="468351808563533" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\tileset-platformer_final.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="291061119543200">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="FeatherCount" sid="649350914218768">
+            <plugin id="TiledBg" />
+            <texture original-source="G:\Pós Games\pequenocacique\Assets\tileset-platformer_final.png" />
+        </object-type>
+        <object-type name="Crystal" sid="826370806437780">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109249462208106" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\tileset-platformer_final.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
         <object-type name="Audio" sid="734271475705954">
             <plugin id="Audio" />

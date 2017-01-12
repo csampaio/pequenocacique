@@ -11,7 +11,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout active="1" order="1">Level1</layout>
-        <layout order="2">Level2</layout>
+        <layout active="1" order="2">Level2</layout>
         <layout order="3">Start</layout>
         <layout order="4">Boss</layout>
         <event-sheet order="0">MainEvent</event-sheet>
@@ -43,6 +43,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/EnemyPhysics/" />
         <folder expanded="1" path="animation-folder/Tucandeira/" />
         <folder expanded="1" path="animation-folder/EnemyPhysics2/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Feather/" />
+        <folder expanded="1" path="animation-folder/Crystal/" />
         <folder expanded="1" path="animation-folder/Checkpoint/" />
         <folder expanded="1" path="animation-folder/Checkpoint2/" />
         <folder expanded="1" path="animation-folder/Checkpoint3/" />

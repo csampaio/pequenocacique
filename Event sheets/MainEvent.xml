@@ -3,8 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MainEvent</name>
     <events>
+        <variable constant="0" name="Invencible" sid="523719704118880" static="0" type="number">0</variable>
         <variable constant="1" name="ROCKMAXDENSITY" sid="451495719173841" static="0" type="number">6000</variable>
         <variable constant="1" name="PlayerMaxSpeed" sid="885945498272089" static="0" type="number">330</variable>
+        <variable constant="0" name="PlayerHP" sid="877144902578090" static="0" type="number">3</variable>
         <variable constant="0" name="NunArrow" sid="462636213646898" static="0" type="number">3</variable>
         <event-block sid="770320581128890">
             <conditions>
@@ -56,6 +58,11 @@
                         <condition id="2" name="Key is down" sid="988749759991834" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="119078341583166" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="347772336791307" type="Player">
@@ -106,6 +113,11 @@
                     <conditions>
                         <condition id="2" name="Key is down" sid="890794352687750" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="378467266890618" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -537,11 +549,17 @@
                             <param id="2" name="Comparison">0</param>
                             <param id="3" name="Tile">282</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="142909964917134" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="577355975529411" type="Player">
                             <param id="0" name="Instance variable">Dead</param>
                         </condition>
                     </conditions>
                     <actions>
+                        <action disabled="1" id="4" name="Set animation" sid="518488419595834" type="Player">
                         <action id="-13" name="Set boolean" sid="846729732957606" type="Player">
                             <param id="0" name="Instance variable">Dead</param>
                             <param id="1" name="Value">1</param>
@@ -549,6 +567,29 @@
                         <action id="4" name="Set animation" sid="518488419595834" type="Player">
                             <param id="0" name="Animation">&quot;Death&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="817922997240047" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="429441671908945" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">PlayerHP-1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="649893505425283" type="FeatherCount">
+                            <param id="0" name="Width">32*PlayerHP</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="562053503544291" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="228287066412893" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="993067803223969" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="477255625399904" type="System">
                             <param id="0" name="Seconds">0.5</param>
@@ -714,6 +755,53 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="325415138337813">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="868195256991712" type="Centopeia">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="306625164242264" type="System">
+                    <param id="0" name="Variable">Invencible</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="478969292397362" type="System">
+                    <param id="0" name="Variable">Invencible</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="705934381549683" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">PlayerHP-1</param>
+                </action>
+                <action id="-5" name="Set width" sid="583677746117637" type="FeatherCount">
+                    <param id="0" name="Width">32*PlayerHP</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="790384303221938" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">2.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="154609927997918" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="251592334539632" type="System">
+                    <param id="0" name="Variable">Invencible</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="108928277579469">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="918003156506034" type="Centopeia">
+                    <param id="0" name="Object">Arrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="947775322370781" type="Centopeia" />
+            </actions>
+        </event-block>
         <event-group description="" sid="422407606264744" title="Tucandeira">
             <sub-events>
                 <event-block sid="153702933799804">
@@ -851,5 +939,40 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="640418820554476">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="537208275474174" type="Feather">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="980305804228218" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Value">PlayerHP+1</param>
+                </action>
+                <action id="-5" name="Set width" sid="896490575271281" type="FeatherCount">
+                    <param id="0" name="Width">32*PlayerHP</param>
+                </action>
+                <action id="-9" name="Destroy" sid="695696362486001" type="Feather" />
+            </actions>
+        </event-block>
+        <event-block sid="709958189678774">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="667820631225287" type="System">
+                    <param id="0" name="Variable">PlayerHP</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="315390017282768" type="Player">
+                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="825663667981694" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
