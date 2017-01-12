@@ -448,5 +448,65 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="422407606264744" title="Tucandeira">
+            <sub-events>
+                <event-block sid="153702933799804">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="184240217956618" type="Tucandeira">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="882872259565867" type="Tucandeira">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="107033684889767" type="Tucandeira">
+                            <param id="0" name="Instance variable">PlayerOnSight</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="696800635556555">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="196749535149148" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;StandUp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="198856218607803" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;StandUp&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="230170938010450">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="850418776348884" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="497337184791277">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="609899072801923" type="Tucandeira">
+                                    <param id="0" name="Instance variable">PlayerOnSight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="217949318091807" type="Tucandeira">
+                                    <param id="0" name="Animation">&quot;LayDonw&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="198471809981412" type="Tucandeira">
+                                    <param id="0" name="Instance variable">PlayerOnSight</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
