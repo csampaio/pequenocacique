@@ -10,6 +10,7 @@
     <unique-id>14vq2k5vaf5y0</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -39,6 +40,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Start</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -65,14 +67,14 @@
                 <behavior-type name="ScrollTo" sid="262109195341413">
                     <behavior id="scrollto" />
                 </behavior-type>
-                <behavior-type name="BoundToLayout" sid="321651769590168">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="Solid" sid="947790875759782">
                     <behavior id="solid" />
                 </behavior-type>
                 <behavior-type name="Flash" sid="943414041387589">
                     <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="482453076107096">
+                    <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -1123,14 +1125,68 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Level" sid="646878662083216">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="518487365229328">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="528981812710729">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset-platformer_final.png" />
+            <tiles>
+                <tile id="248">
+                    <collision-poly>
+                        <point x="0.15625" y="0.625" />
+                        <point x="0.519531" y="0.535156" />
+                        <point x="0.882813" y="0.648438" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="282">
+                    <collision-poly>
+                        <point x="0" y="0.671875" />
+                        <point x="1" y="0.664063" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="Background" sid="596475011230948">
+            <plugin id="Tilemap" />
+            <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset-platformer_final.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Trees" sid="749226842288113">
+            <plugin id="Tilemap" />
+            <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset-platformer_final.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Level1" sid="342657743015110">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Level2" sid="562642303638811">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Boss" sid="205489725735355">
+            <plugin id="Button" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Main.xml</layout>
-        <layout>BossLevel.xml</layout>
+        <layout>Level1.xml</layout>
+        <layout>Level2.xml</layout>
+        <layout>Boss.xml</layout>
+        <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>MainEvent.xml</event-sheet>
+        <event-sheet>StartEvent.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />

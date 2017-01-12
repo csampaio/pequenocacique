@@ -128,7 +128,7 @@
                     <conditions>
                         <condition behavior="Platform" id="6" name="On fall" sid="180851597339555" type="Player" />
                         <condition id="9" inverted="1" name="Is overlapping at offset" sid="351111395486891" type="Player">
-                            <param id="0" name="Object">Tilemap</param>
+                            <param id="0" name="Object">Level</param>
                             <param id="1" name="Offset X">0</param>
                             <param id="2" name="Offset Y">80</param>
                         </condition>
@@ -201,18 +201,6 @@
         </event-group>
         <event-group description="" sid="240257971891222" title="Arrow">
             <sub-events>
-                <event-block sid="818945366154917">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="439704755991932" type="Arrow">
-                            <param id="0" name="Object">Tilemap</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="5" name="Set enabled" sid="373175835140548" type="Arrow">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="704706020747040">
                     <conditions>
                         <condition id="-18" name="On created" sid="770454642418734" type="Arrow" />
@@ -223,28 +211,44 @@
                             <param id="0" name="Angle">180</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="947779131720641">
-                            <conditions />
-                            <actions />
-                        </event-block>
-                    </sub-events>
+                </event-block>
+                <event-block sid="818945366154917">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="439704755991932" type="Arrow">
+                            <param id="0" name="Object">Level</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="373175835140548" type="Arrow">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="644629372247295">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="685227414250063" type="PlayerPhysics">
-                            <param id="0" name="Object">Arrow</param>
-                        </condition>
                         <condition id="1" name="Is overlapping another object" sid="169791776550839" type="Arrow">
-                            <param id="0" name="Object">Tilemap</param>
+                            <param id="0" name="Object">Level</param>
                         </condition>
                         <condition id="2" name="Key is down" sid="522374194256286" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="421993661165684" type="Arrow" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="213980406112412">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="685227414250063" type="Player">
+                                    <param id="0" name="Object">Arrow</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="814850059313726" type="PlayerPhysics">
+                                    <param id="0" name="Object">Arrow</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="421993661165684" type="Arrow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="280600367171715">
                     <conditions>
@@ -323,7 +327,7 @@
                         <event-block sid="854795984077760">
                             <conditions>
                                 <condition id="9" name="Is overlapping at offset" sid="440025089600294" type="Rock">
-                                    <param id="0" name="Object">Tilemap</param>
+                                    <param id="0" name="Object">Level</param>
                                     <param id="1" name="Offset X">0</param>
                                     <param id="2" name="Offset Y">5</param>
                                 </condition>
@@ -366,35 +370,13 @@
         </event-group>
         <event-group description="" sid="876083374369280" title="Death Areas">
             <sub-events>
-                <event-block sid="810168076994102">
-                    <conditions>
-                        <condition id="0" name="Compare tile at" sid="899216248865554" type="Tilemap">
-                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
-                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
-                            <param id="2" name="Comparison">5</param>
-                            <param id="3" name="Tile">15</param>
-                        </condition>
-                        <condition id="0" name="Compare tile at" sid="248454946301217" type="Tilemap">
-                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
-                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
-                            <param id="2" name="Comparison">3</param>
-                            <param id="3" name="Tile">17</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="602163936840330" type="Player">
-                            <param id="0" name="Animation">&quot;Death&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="676304646589646">
                     <conditions>
-                        <condition id="0" name="Compare tile at" sid="325270273972366" type="Tilemap">
-                            <param id="0" name="Tile X">Tilemap.PositionToTileX(Player.X)</param>
-                            <param id="1" name="Tile Y">Tilemap.PositionToTileY(Player.Y) + 1</param>
+                        <condition id="0" name="Compare tile at" sid="325270273972366" type="Level">
+                            <param id="0" name="Tile X">Level.PositionToTileX(Player.X)</param>
+                            <param id="1" name="Tile Y">Level.PositionToTileY(Player.Y) + 1</param>
                             <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Tile">50</param>
+                            <param id="3" name="Tile">282</param>
                         </condition>
                     </conditions>
                     <actions>

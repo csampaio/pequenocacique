@@ -4,8 +4,8 @@
     <sid>503366731076426</sid>
     <event-sheet>MainEvent</event-sheet>
     <size>
-        <width>2560</width>
-        <height>1920</height>
+        <width>800</width>
+        <height>600</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -128,17 +128,17 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Solid">
                             <properties>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Flash" />
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

@@ -4,18 +4,18 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>416.522</position-x>
-        <position-y>312.032</position-y>
-        <position-z>155.879</position-z>
-        <lookat-x>416.522</lookat-x>
-        <lookat-y>312.032</lookat-y>
+        <position-x>312.161</position-x>
+        <position-y>92.1925</position-y>
+        <position-z>90.9091</position-z>
+        <lookat-x>312.161</lookat-x>
+        <lookat-y>92.1925</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>0</snap-to-grid>
-    <show-grid>1</show-grid>
-    <snap-width>640</snap-width>
-    <snap-height>640</snap-height>
-    <show-collision-polys>1</show-collision-polys>
+    <show-grid>0</show-grid>
+    <snap-width>32</snap-width>
+    <snap-height>32</snap-height>
+    <show-collision-polys>0</show-collision-polys>
     <translucent-inactive-layers>0</translucent-inactive-layers>
     <properties>
         <property expanded="1" name="Layout properties" />
@@ -26,8 +26,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <active-layer name="HUD" />
     <layers>
         <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Trees" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Game" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Foreground" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="HUD" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="HUD" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>
