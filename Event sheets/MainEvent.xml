@@ -560,6 +560,7 @@
                     </conditions>
                     <actions>
                         <action disabled="1" id="4" name="Set animation" sid="518488419595834" type="Player">
+						</action>
                         <action id="-13" name="Set boolean" sid="846729732957606" type="Player">
                             <param id="0" name="Instance variable">Dead</param>
                             <param id="1" name="Value">1</param>
