@@ -1168,7 +1168,24 @@
         <object-type name="Trees" sid="749226842288113">
             <plugin id="Tilemap" />
             <texture original-source="E:\projetos\PosUEA\pequenocacique\Assets\tileset-platformer_final.png" />
-            <tiles />
+            <tiles>
+                <tile id="248">
+                    <collision-poly>
+                        <point x="0.140625" y="0.625" />
+                        <point x="0.867188" y="0.625" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="282">
+                    <collision-poly>
+                        <point x="0" y="0.632813" />
+                        <point x="1" y="0.640625" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
         </object-type>
         <object-type name="Level1" sid="342657743015110">
             <plugin id="Button" />
@@ -1195,7 +1212,34 @@
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="atirando.m4a" />
+        <file name="atirando.ogg" />
+        <file name="bossdano.m4a" />
+        <file name="bossdano.ogg" />
+        <file name="bossmorte.m4a" />
+        <file name="bossmorte.ogg" />
+        <file name="coletandocristal.m4a" />
+        <file name="coletandocristal.ogg" />
+        <file name="empurrandoblocos.m4a" />
+        <file name="empurrandoblocos.ogg" />
+        <file name="menunavegando.m4a" />
+        <file name="menunavegando.ogg" />
+        <file name="menuselecionando.m4a" />
+        <file name="menuselecionando.ogg" />
+        <file name="passos.m4a" />
+        <file name="passos.ogg" />
+        <file name="pegandovidas.m4a" />
+        <file name="pegandovidas.ogg" />
+        <file name="playerdano.m4a" />
+        <file name="playerdano.ogg" />
+        <file name="pulo.m4a" />
+        <file name="pulo.ogg" />
+        <file name="puloaterrisagem.m4a" />
+        <file name="puloaterrisagem.ogg" />
+        <file name="semflechas.m4a" />
+        <file name="semflechas.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
