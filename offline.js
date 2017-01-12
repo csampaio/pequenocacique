@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1483982193,
+	"version": 1484201540,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -12,6 +12,12 @@
 		"images/rockbase-sheet0.png",
 		"images/arrawcount.png",
 		"images/board-sheet0.png",
+		"images/bat-sheet0.png",
+		"images/centopeia-sheet0.png",
+		"images/centopeia-sheet1.png",
+		"images/tucandeira-sheet0.png",
+		"images/level.png",
+		"images/background.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
