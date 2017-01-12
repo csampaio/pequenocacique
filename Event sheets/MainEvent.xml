@@ -72,6 +72,9 @@
                                 <condition id="2" inverted="1" name="Key is down" sid="615076202427622" type="Keyboard">
                                     <param id="0" name="Key">88 (X)</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="991892336465734" type="Player">
+                                    <param id="0" name="Instance variable">Dead</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="113401683214651" type="Player">
@@ -79,6 +82,23 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="195974364588369">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="169062612930685" type="Audio">
+                                            <param id="0" name="Tag">&quot;walking&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="617023114833908" type="Audio">
+                                            <param id="0" name="Audio file">passos</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;walking&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -103,6 +123,9 @@
                                 <condition id="2" inverted="1" name="Key is down" sid="174512920943733" type="Keyboard">
                                     <param id="0" name="Key">88 (X)</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="711685831495871" type="Player">
+                                    <param id="0" name="Instance variable">Dead</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="668103780042503" type="Player">
@@ -110,12 +133,32 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="788889922194107">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="216731118304325" type="Audio">
+                                            <param id="0" name="Tag">&quot;walking&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="933189738281341" type="Audio">
+                                            <param id="0" name="Audio file">passos</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;walking&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="163327270860257">
                     <conditions>
                         <condition behavior="Platform" id="5" name="On jump" sid="484170070771419" type="Player" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="719998777695060" type="Player">
+                            <param id="0" name="Instance variable">Dead</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="647626988516630" type="Player">
@@ -123,6 +166,23 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="288361049822196">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="323962420542599" type="Audio">
+                                    <param id="0" name="Tag">&quot;jump&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="224941672257937" type="Audio">
+                                    <param id="0" name="Audio file">pulo</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;jump&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="989314088492810">
                     <conditions>
@@ -164,38 +224,85 @@
                         <condition id="0" name="On key pressed" sid="371099244493699" type="Keyboard">
                             <param id="0" name="Key">32 (Space)</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="578206363626176" type="System">
-                            <param id="0" name="Variable">NunArrow</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">3</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="648219109254547" type="System">
-                            <param id="0" name="Variable">NunArrow</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="625399020166318" type="Player">
-                            <param id="0" name="Animation">&quot;Fire&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="328060813126865" type="Player">
-                            <param id="0" name="Object">Arrow</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">&quot;Bow&quot;</param>
-                        </action>
-                        <action behavior="Bullet" id="5" name="Set enabled" sid="333381901762973" type="Arrow">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-11" name="Subtract from" sid="172484395418623" type="System">
-                            <param id="0" name="Variable">NunArrow</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-5" name="Set width" sid="283342185064155" type="ArrawCount">
-                            <param id="0" name="Width">64*NunArrow</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="289505620946169">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="578206363626176" type="System">
+                                    <param id="0" name="Variable">NunArrow</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="648219109254547" type="System">
+                                    <param id="0" name="Variable">NunArrow</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="625399020166318" type="Player">
+                                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="328060813126865" type="Player">
+                                    <param id="0" name="Object">Arrow</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">&quot;Bow&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="333381901762973" type="Arrow">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="172484395418623" type="System">
+                                    <param id="0" name="Variable">NunArrow</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="283342185064155" type="ArrawCount">
+                                    <param id="0" name="Width">64*NunArrow</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="455402901429883">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="576312802513710" type="Audio">
+                                            <param id="0" name="Tag">&quot;fire&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="779613688917202" type="Audio">
+                                            <param id="0" name="Audio file">atirando</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;fire&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="979641445258961">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="854672194697999" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="731375309945085">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="494187270017021" type="Audio">
+                                            <param id="0" name="Tag">&quot;noarrow&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="470641074322992" type="Audio">
+                                            <param id="0" name="Audio file">semflechas</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;noarrow&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -339,6 +446,23 @@
                                     <param id="0" name="Max Speed">100</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="676678410616166">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="926384619087226" type="Audio">
+                                            <param id="0" name="Tag">&quot;push&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="861491390952148" type="Audio">
+                                            <param id="0" name="Audio file">empurrandoblocos</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;push&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="666676329835090">
                             <conditions>
@@ -415,11 +539,55 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-13" name="Set boolean" sid="846729732957606" type="Player">
+                            <param id="0" name="Instance variable">Dead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="4" name="Set animation" sid="518488419595834" type="Player">
                             <param id="0" name="Animation">&quot;Death&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="-11" name="Add to" sid="143787421971999" type="Player">
+                            <param id="0" name="Instance variable">Lifes</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="322498786476774">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="712283991236199" type="Audio">
+                                    <param id="0" name="Tag">&quot;hit&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="149199747158350" type="Player">
+                                    <param id="0" name="Instance variable">Dead</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="161140977038526" type="Audio">
+                                    <param id="0" name="Audio file">playerdano</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="477255625399904" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="734381978498490" type="Player">
+                                    <param id="0" name="Object">Checkpoint</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="589273313896341" type="Player">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="812006705638313" type="Player">
+                                    <param id="0" name="Instance variable">Dead</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

@@ -10,6 +10,7 @@
     <unique-id>14vq2k5vaf5y0</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -60,6 +61,10 @@
     <object-folder>
         <object-type name="Player" sid="474175921967984">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Lifes" sid="651870008618918" type="number" />
+                <instance-variable name="Dead" sid="226148295666464" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="506717280622744">
                     <behavior id="Platform" />
@@ -1196,6 +1201,17 @@
         <object-type name="Boss" sid="205489725735355">
             <plugin id="Button" />
         </object-type>
+        <object-type name="Audio" sid="734271475705954">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Checkpoint" sid="240272152568218">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="329065350767063" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1211,6 +1227,20 @@
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
+        <global-instance type="Audio" uid="39">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="atirando.m4a" />
@@ -1240,7 +1270,16 @@
         <file name="semflechas.m4a" />
         <file name="semflechas.ogg" />
     </sounds-folder>
-    <music-folder />
+    <music-folder>
+        <file name="battleThemeA - cynicmusic (boss).m4a" />
+        <file name="battleThemeA - cynicmusic (boss).ogg" />
+        <file name="inarticulate - axton crolley (fase 2).m4a" />
+        <file name="inarticulate - axton crolley (fase 2).ogg" />
+        <file name="radakan - janne hanhisuanto (menu).m4a" />
+        <file name="radakan - janne hanhisuanto (menu).ogg" />
+        <file name="woods - axton crolley (fase 1).m4a" />
+        <file name="woods - axton crolley (fase 1).ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
