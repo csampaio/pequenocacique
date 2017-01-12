@@ -537,6 +537,9 @@
                             <param id="2" name="Comparison">0</param>
                             <param id="3" name="Tile">282</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="577355975529411" type="Player">
+                            <param id="0" name="Instance variable">Dead</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-13" name="Set boolean" sid="846729732957606" type="Player">
@@ -547,19 +550,104 @@
                             <param id="0" name="Animation">&quot;Death&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="-11" name="Add to" sid="143787421971999" type="Player">
-                            <param id="0" name="Instance variable">Lifes</param>
-                            <param id="1" name="Value">-1</param>
+                        <action id="-16" name="Wait" sid="477255625399904" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="589273313896341" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="322498786476774">
+                        <event-block sid="879514384290840">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="633344097907480" type="System">
+                                    <param id="0" name="First value">Player.X</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">Checkpoint2.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="734381978498490" type="Player">
+                                    <param id="0" name="Object">Checkpoint</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="810709305574998" type="Text2">
+                                    <param id="0" name="Text">&quot;1&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="317793243861465">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="368797995936079" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="152608787526331">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="239787837653605" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">Checkpoint3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="300793787525013" type="Player">
+                                            <param id="0" name="Object">Checkpoint2</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="240910668469948" type="Text2">
+                                            <param id="0" name="Text">&quot;2&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="864732048686914">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="287262640536867" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="549773580039305">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="857014880798956" type="System">
+                                                    <param id="0" name="First value">Player.X</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">Checkpoint4.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set position to another object" sid="778002849596639" type="Player">
+                                                    <param id="0" name="Object">Checkpoint3</param>
+                                                    <param id="1" name="Image point (optional)">0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="742588356932007" type="Text2">
+                                                    <param id="0" name="Text">&quot;3&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="748818256179255">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="307947925083010" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set position to another object" sid="587198890054808" type="Player">
+                                                    <param id="0" name="Object">Checkpoint4</param>
+                                                    <param id="1" name="Image point (optional)">0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="563586590839420" type="Text2">
+                                                    <param id="0" name="Text">&quot;4&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="866158527930969">
                             <conditions>
                                 <condition id="5" inverted="1" name="Is tag playing" sid="712283991236199" type="Audio">
                                     <param id="0" name="Tag">&quot;hit&quot;</param>
-                                </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="149199747158350" type="Player">
-                                    <param id="0" name="Instance variable">Dead</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -569,18 +657,11 @@
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="477255625399904" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="-4" name="Set position to another object" sid="734381978498490" type="Player">
-                                    <param id="0" name="Object">Checkpoint</param>
-                                    <param id="1" name="Image point (optional)">0</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="589273313896341" type="Player">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">1.0</param>
-                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="900376846582742">
+                            <conditions />
+                            <actions>
                                 <action id="-13" name="Set boolean" sid="812006705638313" type="Player">
                                     <param id="0" name="Instance variable">Dead</param>
                                     <param id="1" name="Value">0</param>
