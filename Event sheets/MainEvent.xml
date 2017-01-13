@@ -781,6 +781,53 @@
         </event-group>
         <event-group description="" sid="937697164373026" title="Centopeia">
             <sub-events>
+                <event-block sid="108928277579469">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="918003156506034" type="Centopeia">
+                            <param id="0" name="Object">Arrow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="947775322370781" type="Centopeia" />
+                    </actions>
+                </event-block>
+                <event-block sid="325415138337813">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="868195256991712" type="Centopeia">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="306625164242264" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="478969292397362" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="705934381549683" type="System">
+                            <param id="0" name="Variable">PlayerHP</param>
+                            <param id="1" name="Value">PlayerHP-1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="583677746117637" type="FeatherCount">
+                            <param id="0" name="Width">32*PlayerHP</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="790384303221938" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="154609927997918" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="251592334539632" type="System">
+                            <param id="0" name="Variable">Invencible</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="276944249707602">
                     <conditions>
                         <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="623752040655598" type="Centopeia">
@@ -821,53 +868,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="325415138337813">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="868195256991712" type="Centopeia">
-                    <param id="0" name="Object">Player</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="306625164242264" type="System">
-                    <param id="0" name="Variable">Invencible</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="478969292397362" type="System">
-                    <param id="0" name="Variable">Invencible</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="-9" name="Set value" sid="705934381549683" type="System">
-                    <param id="0" name="Variable">PlayerHP</param>
-                    <param id="1" name="Value">PlayerHP-1</param>
-                </action>
-                <action id="-5" name="Set width" sid="583677746117637" type="FeatherCount">
-                    <param id="0" name="Width">32*PlayerHP</param>
-                </action>
-                <action behavior="Flash" id="0" name="Flash" sid="790384303221938" type="Player">
-                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                    <param id="2" name="Duration">2.0</param>
-                </action>
-                <action id="-16" name="Wait" sid="154609927997918" type="System">
-                    <param id="0" name="Seconds">2</param>
-                </action>
-                <action id="-9" name="Set value" sid="251592334539632" type="System">
-                    <param id="0" name="Variable">Invencible</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="108928277579469">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="918003156506034" type="Centopeia">
-                    <param id="0" name="Object">Arrow</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="947775322370781" type="Centopeia" />
-            </actions>
-        </event-block>
         <event-group description="" sid="422407606264744" title="Tucandeira">
             <sub-events>
                 <event-block sid="153702933799804">
@@ -1040,11 +1040,73 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="572453722315662">
+        <event-block sid="760604888876069">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="375435644787883" type="System" />
+                <condition id="0" name="On collision with another object" sid="403183004806210" type="Crystal">
+                    <param id="0" name="Object">Player</param>
+                </condition>
             </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="867766703001246">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="846750582258681" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="530024931029033" type="System">
+                            <param id="0" name="Layout">Level2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384696008627442">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="950890080194650" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="954366569620633">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="714425172251946" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Level2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="381090873689094" type="System">
+                                    <param id="0" name="Layout">Boss</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="994152398831017">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="209564064264273" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="823875202660031">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="113192405089903" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Boss&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="355133115361115" type="System">
+                                            <param id="0" name="Layout">Ending</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
