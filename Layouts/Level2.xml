@@ -105,7 +105,7 @@
                         <opacity>1</opacity>
                     </world>
                     <tilemap-data>
-                        <width>25</width>
+                        <width>200</width>
                         <height>200</height>
                         <max-width>200</max-width>
                         <max-height>200</max-height>
@@ -333,7 +333,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Feather" uid="40">
+                <instance type="Feather" uid="17">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -362,7 +362,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Centopeia" uid="43">
+                <instance type="Centopeia" uid="18">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -415,7 +415,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Centopeia" uid="44">
+                <instance type="Centopeia" uid="19">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -468,7 +468,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Feather" uid="45">
+                <instance type="Feather" uid="31">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -497,7 +497,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Centopeia" uid="46">
+                <instance type="Centopeia" uid="32">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -550,7 +550,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Centopeia" uid="47">
+                <instance type="Centopeia" uid="33">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -603,7 +603,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Centopeia" uid="48">
+                <instance type="Centopeia" uid="34">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -726,7 +726,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="ArrawCount" uid="31">
+                <instance type="ArrawCount" uid="35">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -746,7 +746,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="FeatherCount" uid="42">
+                <instance type="FeatherCount" uid="36">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
