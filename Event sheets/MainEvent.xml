@@ -17,6 +17,88 @@
                     <param id="0" name="Gravity">20</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="361616402259305">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="139879717560731" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="390638419144804" type="Audio">
+                            <param id="0" name="Audio file">woods - axton crolley (fase 1)</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;level1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="974406066746119">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="129889605207272" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="824400642098995">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="309138189344756" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Level2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="732616150795469" type="Audio">
+                                    <param id="0" name="Audio file">inarticulate - axton crolley (fase 2)</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;level2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="604183764431151">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="612708548444964" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="456420583239502">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="894823412048182" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Boss&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="710176132179317" type="Audio">
+                                            <param id="0" name="Audio file">battleThemeA - cynicmusic (boss)</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;level3&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="993035165565834">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="909523645521507" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="197513994908286" type="Audio">
+                                            <param id="0" name="Audio file">radakan - janne hanhisuanto (menu)</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;menu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="229589234070660">
             <conditions>
@@ -41,9 +123,6 @@
                 <action id="-3" name="Set position" sid="804382836953594" type="EnemyPhysics">
                     <param id="0" name="X">Centopeia.X</param>
                     <param id="1" name="Y">Centopeia.Y +5</param>
-                </action>
-                <action id="0" name="Set text" sid="735432314506441" type="Text">
-                    <param id="0" name="Text">Centopeia.Bullet.AngleOfMotion</param>
                 </action>
                 <action id="-3" name="Set position" sid="503534061205028" type="EnemyPhysics2">
                     <param id="0" name="X">Tucandeira.X</param>
@@ -559,10 +638,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="4" name="Set animation" sid="518488419595834" type="Player">
-                            <param id="0" name="Animation">&quot;&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
                         <action id="-13" name="Set boolean" sid="846729732957606" type="Player">
                             <param id="0" name="Instance variable">Dead</param>
                             <param id="1" name="Value">1</param>
@@ -582,17 +657,13 @@
                         <action id="-5" name="Set width" sid="649893505425283" type="FeatherCount">
                             <param id="0" name="Width">32*PlayerHP</param>
                         </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="562053503544291" type="Player">
+                        <action behavior="Flash" disabled="1" id="0" name="Flash" sid="562053503544291" type="Player">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">2.0</param>
                         </action>
-                        <action id="-16" name="Wait" sid="228287066412893" type="System">
+                        <action disabled="1" id="-16" name="Wait" sid="228287066412893" type="System">
                             <param id="0" name="Seconds">2</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="993067803223969" type="System">
-                            <param id="0" name="Variable">Invencible</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="477255625399904" type="System">
                             <param id="0" name="Seconds">0.5</param>
@@ -617,9 +688,6 @@
                                     <param id="0" name="Object">Checkpoint</param>
                                     <param id="1" name="Image point (optional)">0</param>
                                 </action>
-                                <action id="0" name="Set text" sid="810709305574998" type="Text2">
-                                    <param id="0" name="Text">&quot;1&quot;</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="317793243861465">
@@ -640,9 +708,6 @@
                                         <action id="-4" name="Set position to another object" sid="300793787525013" type="Player">
                                             <param id="0" name="Object">Checkpoint2</param>
                                             <param id="1" name="Image point (optional)">0</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="240910668469948" type="Text2">
-                                            <param id="0" name="Text">&quot;2&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -665,9 +730,6 @@
                                                     <param id="0" name="Object">Checkpoint3</param>
                                                     <param id="1" name="Image point (optional)">0</param>
                                                 </action>
-                                                <action id="0" name="Set text" sid="742588356932007" type="Text2">
-                                                    <param id="0" name="Text">&quot;3&quot;</param>
-                                                </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="748818256179255">
@@ -678,9 +740,6 @@
                                                 <action id="-4" name="Set position to another object" sid="587198890054808" type="Player">
                                                     <param id="0" name="Object">Checkpoint4</param>
                                                     <param id="1" name="Image point (optional)">0</param>
-                                                </action>
-                                                <action id="0" name="Set text" sid="563586590839420" type="Text2">
-                                                    <param id="0" name="Text">&quot;4&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -706,6 +765,10 @@
                         <event-block sid="900376846582742">
                             <conditions />
                             <actions>
+                                <action id="-9" name="Set value" sid="993067803223969" type="System">
+                                    <param id="0" name="Variable">Invencible</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="812006705638313" type="Player">
                                     <param id="0" name="Instance variable">Dead</param>
                                     <param id="1" name="Value">0</param>
@@ -976,6 +1039,12 @@
                     <param id="0" name="Input">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="572453722315662">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="375435644787883" type="System" />
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
