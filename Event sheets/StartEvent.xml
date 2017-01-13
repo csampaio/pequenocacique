@@ -3,33 +3,69 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>StartEvent</name>
     <events>
-        <event-block sid="221492446505498">
+        <event-block sid="434440778913899">
             <conditions>
-                <condition id="0" name="On clicked" sid="516686427913619" type="Level1" />
+                <condition id="6" name="On object clicked" sid="130115970573974" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite5</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="408731940510456" type="System">
+                <action id="-2" name="Go to layout" sid="594787095077699" type="System">
                     <param id="0" name="Layout">Level1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="819175891354327">
+        <event-block sid="217148183848835">
             <conditions>
-                <condition id="0" name="On clicked" sid="879103975451979" type="Level2" />
+                <condition id="7" name="Cursor is over object" sid="913205684643350" type="Mouse">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="789645383869062" type="System">
-                    <param id="0" name="Layout">Level2</param>
+                <action id="4" name="Set animation" sid="602609744658586" type="Sprite5">
+                    <param id="0" name="Animation">&quot;Rover&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="369019966526544">
+        <event-block sid="554510227286553">
             <conditions>
-                <condition id="0" name="On clicked" sid="269490345766227" type="Boss" />
+                <condition id="7" inverted="1" name="Cursor is over object" sid="857426876744347" type="Mouse">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="622580219544824" type="System">
-                    <param id="0" name="Layout">Boss</param>
+                <action id="4" name="Set animation" sid="311376432649837" type="Sprite5">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="529066813833537">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="914817906981898" type="Mouse">
+                    <param id="0" name="Object">Sprite7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="837263193098170" type="Sprite7">
+                    <param id="0" name="Animation">&quot;Rover&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="771762935555428">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="679759464681967" type="Mouse">
+                    <param id="0" name="Object">Sprite7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="214104293301440" type="Sprite7">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>

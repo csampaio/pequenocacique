@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EndingEvent</name>
+    <events>
+        <event-block sid="597364700651752">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="292625581635830" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="823981934877809" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="4" name="Set animation" sid="630890371711355" type="Sprite10">
+                    <param id="0" name="Animation">&quot;TheEnd&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

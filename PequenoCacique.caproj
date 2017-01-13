@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -36,8 +37,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1280</width>
-        <height>640</height>
+        <width>800</width>
+        <height>600</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -1192,15 +1193,6 @@
                 </tile>
             </tiles>
         </object-type>
-        <object-type name="Level1" sid="342657743015110">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="Level2" sid="562642303638811">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="Boss" sid="205489725735355">
-            <plugin id="Button" />
-        </object-type>
         <object-type name="Sprite" sid="668584921230653">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1304,6 +1296,146 @@
         <object-type name="Text2" sid="148855728270641">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Sprite3" sid="878780260165834">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="357491543914932" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="329780502593182">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="940137033139066" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\menu\menu_bg.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="454223036923527">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Sprite5" sid="529403693206101">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="202698889127394" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.511628" original-source="G:\Pós Games\pequenocacique\Assets\menu\iniciar iddle.gif">
+                        <collision-poly>
+                            <point x="0.0170455" y="0.0697674" />
+                            <point x="0.5" y="0.27907" />
+                            <point x="0.931818" y="0.27907" />
+                            <point x="0.931818" y="0.72093" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Rover" pingpong="0" repeatcount="1" repeatto="0" sid="472674062165292" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.511628" original-source="G:\Pós Games\pequenocacique\Assets\menu\iniciar hover.png">
+                        <collision-poly>
+                            <point x="0.0170455" y="0.0697674" />
+                            <point x="0.5" y="0.27907" />
+                            <point x="0.926136" y="0.302326" />
+                            <point x="0.926136" y="0.697674" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="389916259114544">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Sprite6" sid="961098784028893">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="116015207907099" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\menu\menu_titulo.png">
+                        <collision-poly>
+                            <point x="0.0287356" y="0.0406504" />
+                            <point x="0.5" y="0.341463" />
+                            <point x="0.689655" y="0.439024" />
+                            <point x="0.643678" y="0.5" />
+                            <point x="0.971264" y="0.95935" />
+                            <point x="0.0431034" y="0.939024" />
+                            <point x="0.0143678" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite7" sid="597207218616752">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="323985664592382" speed="5">
+                    <frame duration="1" hotspotX="0.50505" hotspotY="0.511628" original-source="G:\Pós Games\pequenocacique\Assets\menu\sair iddle.gif">
+                        <collision-poly>
+                            <point x="0.121212" y="0.27907" />
+                            <point x="0.494949" y="0.930233" />
+                            <point x="0.878788" y="0.27907" />
+                            <point x="0.878788" y="0.72093" />
+                            <point x="0.494949" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.488372" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Rover" pingpong="0" repeatcount="1" repeatto="0" sid="842512275575505" speed="5">
+                    <frame duration="1" hotspotX="0.50505" hotspotY="0.511628" original-source="G:\Pós Games\pequenocacique\Assets\menu\sair hover.gif">
+                        <collision-poly>
+                            <point x="0.121212" y="0.27907" />
+                            <point x="0.494949" y="0.930233" />
+                            <point x="0.878788" y="0.27907" />
+                            <point x="0.878788" y="0.72093" />
+                            <point x="0.494949" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.488372" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite8" sid="862208688189476">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="177976730506965" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\ending\ending_bg.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite9" sid="319402855363255">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="106609014851872" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite10" sid="252512045102605">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="370756802577955" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\ending\ending_resumo.png">
+                        <collision-poly>
+                            <point x="0.171094" y="0.342187" />
+                            <point x="0.5" y="0.175" />
+                            <point x="0.5" y="0.679688" />
+                            <point x="0.155469" y="0.689062" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="TheEnd" pingpong="0" repeatcount="1" repeatto="0" sid="238466316481818" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Pós Games\pequenocacique\Assets\ending\ending_the_end.png">
+                        <collision-poly>
+                            <point x="0.535937" y="0.5" />
+                            <point x="0.279687" y="0.440625" />
+                            <point x="0.294531" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1312,14 +1444,16 @@
         <layout>Level2.xml</layout>
         <layout>Boss.xml</layout>
         <layout>Start.xml</layout>
+        <layout>Ending.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>MainEvent.xml</event-sheet>
         <event-sheet>StartEvent.xml</event-sheet>
+        <event-sheet>EndingEvent.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Keyboard" uid="2" />
-        <global-instance type="Audio" uid="39">
+        <global-instance type="Keyboard" uid="59" />
+        <global-instance type="Audio" uid="60">
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>
@@ -1333,6 +1467,7 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="Mouse" uid="63" />
     </global-instances>
     <sounds-folder>
         <file name="atirando.m4a" />
