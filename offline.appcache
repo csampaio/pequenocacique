@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1484326248
+#1484490089
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -29,6 +29,7 @@ images/sprite7-sheet0.png
 images/sprite8-sheet0.png
 images/sprite9-sheet0.png
 images/sprite10-sheet0.png
+images/spritefont.png
 media/atirando.m4a
 media/atirando.ogg
 media/bossdano.m4a

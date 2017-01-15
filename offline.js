@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484326248,
+	"version": 1484490089,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -30,6 +30,7 @@
 		"images/sprite8-sheet0.png",
 		"images/sprite9-sheet0.png",
 		"images/sprite10-sheet0.png",
+		"images/spritefont.png",
 		"media/atirando.m4a",
 		"media/atirando.ogg",
 		"media/bossdano.m4a",
