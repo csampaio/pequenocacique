@@ -1438,6 +1438,30 @@
             <plugin id="Spritefont2" />
             <texture />
         </object-type>
+        <object-type name="Level1" sid="757263655239306">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="998934349211052">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Level2" sid="879696366567738">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="948028001704173">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Level3" sid="658785845830261">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="238939845173566">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
